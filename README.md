@@ -5,5 +5,5 @@ Technologies utilisées
 .HTML
 .CSS
 
-Auteur
+Auteur :
 Ronsard Diabasana / Développeur Web Front-end
