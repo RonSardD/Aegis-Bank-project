@@ -1,41 +1,63 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    <!-- Métadonnées pour l'encodage, la responsivité et le titre -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Banque Moderne - Landing Page</title>
+    <!-- Liens vers les styles externes et Font Awesome pour les icônes -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 </head>
-<body>   
+<body>
+    <!-- En-tête de la page avec navigation -->
     <header class="navbar">
-        <div class="logo">
-        <img src="aegisbank-high-resolution-logo.png" alt="Logo BanqueMod" width:"100px">  
-    </div>
-    <div class="header_btn">
-        <button><a href="#">Log</a></button>
-        <button><a href="#">Sub</a></button>
-    </div>
-        <button class="menu-burger">☰</button>
+        <!-- Navigation principale -->
+        <nav class="navbar__nav">
+            <!-- Logo de la banque -->
+            <div class="navbar__logo">
+                <img src="Aegis Bank Logos.png" alt="Logo de Aegis Bank">
+            </div>
+            <!-- Input checkbox caché pour le toggle CSS -->
+            <input type="checkbox" id="menu-toggle">
+            <!-- Label stylisé comme menu burger (toujours visible) -->
+            <label for="menu-toggle" class="navbar__burger" aria-label="Ouvrir le menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <!-- Menu mobile (caché par défaut, affiché au clic via CSS) -->
+            <div class="navbar__mobile-menu">
+                <button class="navbar__button"><a href="#" aria-label="Se connecter à votre compte">Se connecter</a></button>
+                <button class="navbar__button"><a href="#" aria-label="S'inscrire à Aegis Bank">S'inscrire</a></button>
+            </div>
+        </nav>
     </header>
    
+    <!-- Contenu principal de la page -->
     <main class="main-content">
-        <h1 class="title">Aegissez en toute simpicité avec votre banque !!</h1>
-        <h2 class="subtitle">Chez Aegis Bank, nous vous offrons des services clairs, rapides et sécurisés, pour vous permettre de gérez vos finances en toute confiance.</h2>
+        <!-- Titre principal -->
+        <h1 class="main-content__title">Aegissez en toute simplicité avec votre banque !!</h1>
+        <!-- Sous-titre descriptif -->
+        <h2 class="main-content__subtitle">Chez Aegis Bank, nous vous offrons des services clairs, rapides et sécurisés, pour vous permettre de gérer vos finances en toute confiance.</h2>
         
+        <!-- Carte d'offre exclusive (avec animation d'entrée) -->
         <div class="card">
-            <h3>Offre exclusive</h3>
-            <p>Réclamez 20 € offerts pour votre premier dépôt !</p>
-            <button class="cta-button">Réclamer l'offre</button>
+            <h3 class="card__title">Offre exclusive</h3>
+            <p class="card__description">Réclamez 20 € offerts pour votre premier dépôt !</p>
+            <button class="card__cta-button" aria-label="Réclamer l'offre de 20 euros">Réclamer l'offre</button>
         </div>
     </main>
     
+    <!-- Pied de page -->
     <footer class="footer">
-        <div class="social-links">
-            <i class="fa-brands fa-telegram"></i>
-            <i class="fa-brands fa-discord"></i>
-            <i class="fa-brands fa-bluesky"></i>
+        <!-- Liens vers les réseaux sociaux (avec animation de pulsation et Grid pour le bonus) -->
+        <div class="footer__social-links">
+            <a href="#" aria-label="Suivez-nous sur Telegram"><i class="fab fa-telegram"></i></a>
+            <a href="#" aria-label="Rejoignez-nous sur Discord"><i class="fab fa-discord"></i></a>
+            <a href="#" aria-label="Suivez-nous sur Bluesky"><i class="fab fa-bluesky"></i></a>
         </div>
+        <!-- Copyright -->
         <p>&copy; 2025 Aegis Bank. Tous droits réservés.</p>
     </footer>
 </body>
