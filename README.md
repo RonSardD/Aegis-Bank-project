@@ -12,7 +12,7 @@ Fonctionnalité :
 
 Navbar responsive : Un logo cliquable avec bouton de connexion, inscription et le menu burger.
 
-contenu principal : Un titre accrocheur, un sous-titre descriptif et une carte animée incluent une offre exclusive (20 € offert).
+contenu principal : Un titre accrocheur, un sous-titre descriptif et une carte animée incluent une offre exclusive (20 € offerts).
 
 Footer : Pour les liens sociaux comme : Telegram, Discord et Bluesky incluent avec des animations et copyright.
 
