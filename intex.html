@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aegis Bank</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="colors.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+<body>
+    <!-- En-tête de la page avec navigation -->
+    <header class="navbar">
+        <!-- Navigation principale -->
+        <div class="navbar__nav">
+            <!-- Logo de la banque -->
+            <div class="navbar__logo">
+                <a href="/" title="Page d'acceuil">
+                    <img src="assets/images/aigis-bank-logo.png" alt="Logo de Aegis Bank">
+                </a>
+            </div>
+            <div class="navbar__web-menu">
+                <input type="button" class="navbar__button" value="Se connecter" onclick="window.location.href='/login'"aria-label="Se connecter">
+                <input type="button" class="navbar__button" value="S'inscrire" onclick="window.location.href='/login'" aria-label="S'inscrire">
+            </div>
+            <!-- Input checkbox caché pour le toggle CSS -->
+            <input type="checkbox" id="menu-toggle">
+            <!-- Label stylisé comme menu burger -->
+            <label for="menu-toggle" class="navbar__burger" aria-label="Ouvrir le menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+        </div>
+    </header>
+   
+    <main class="main-content">
+        <h1 class="main-content__title">La néobanque éthique & transparente !!</h1>
+        <h2 class="main-content__subtitle">Chez Aegis Bank, nous vous offrons des services clairs, rapides et sécurisés, pour vous permettre de gérer vos finances en toute confiance.</h2>
+        <div class="card">
+            <h3 class="card__title">Offre exclusive</h3>
+            <p class="card__description">20 € offerts - Mars 2026 !</p>
+            <button class="card__cta-button" aria-label="Télécharger l'application">Télécharger l'app</button>
+        </div>
+    </main>
+    
+    <footer class="footer">
+        <div class="footer__social-links">
+            <a href="#" aria-label="Suivez-nous sur Telegram"><i class="fab fa-telegram"></i></a>
+            <a href="#" aria-label="Rejoignez-nous sur Discord"><i class="fab fa-discord"></i></a>
+            <a href="#" aria-label="Suivez-nous sur Bluesky"><i class="fab fa-bluesky"></i></a>
+        </div>
+        <!-- Copyright -->
+        <p>&copy; 2025 Aegis Bank.</p>
+    </footer>
+</body>
+</html>

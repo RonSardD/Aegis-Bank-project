@@ -1,0 +1,275 @@
+/* Reset basique pour uniformiser les styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styles généraux du corps de la page */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    max-height: 100vh;
+    overflow-x: hidden;
+}
+
+
+/* En-tête de navigation */
+.navbar {
+    background-color: var(--primary-color);
+    color: #fff; 
+    padding: 15px;
+}
+
+.navbar__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+/* Logo dans la navbar */
+.navbar__logo img {
+    max-width: 100px;
+    height: auto;
+    object-fit: contain;
+}
+
+.navbar__logo a {
+    text-decoration: none;
+}
+
+/* Conteneur des boutons de connexion et inscription */
+.navbar__buttons {
+    display: flex;
+    gap: 10px;
+    margin-left: auto;
+}
+
+/* Boutons individuels dans la navbar - Animation 1 */
+.navbar__button {
+    background: none;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.navbar__button:hover {
+    background-color: #008c3f;
+    transform: scale(1.05);
+}
+
+.navbar__button a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Input checkbox caché pour le toggle */
+#menu-toggle {
+    display: none;
+}
+
+/* Bouton menu burger */
+.navbar__burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.navbar__burger span {
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+/*bouton de connexion */
+.navbar__web-menu {
+    align-items: right; 
+    border: none;
+    display: flex;
+    flex-flow: column nowrap;
+    margin-left: auto;
+    text-decoration: none;
+    width: 8rem;
+}
+
+/* Quand le checkbox est coché */
+#menu-toggle:checked ~ .navbar__burger span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+#menu-toggle:checked ~ .navbar__burger span:nth-child(2) {
+    opacity: 0;
+}
+
+#menu-toggle:checked ~ .navbar__burger span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+#menu-toggle:checked ~ .navbar__mobile-menu {
+    display: flex;
+    max-height: 200px;
+    opacity: 1;
+}
+
+/* Contenu principal qui est centré et flexible (flexbox) */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+/* Titre principal */
+.main-content__title {
+    font-size: 1.8em;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Sous-titre */
+.main-content__subtitle {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+    max-width: 600px;
+}
+
+/* Carte d'offre - Animation 2 */
+.card {
+    background-color: #fff;
+    border: 1px solid var(--primary-color);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 80%;
+    animation: slideInUp 1s ease-out;
+}
+
+/* Définition de l'animation slideInUp */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card__title {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.card__description {
+    margin-bottom: 15px;
+}
+
+.card__cta-button {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+.card__cta-button:hover {
+    background-color: #008c3f;
+}
+
+/* Pied de page */
+.footer {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+/* Liens sociaux (Grid) */
+.footer__social-links {
+    margin-bottom: 5px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    justify-items: center;
+}
+
+.footer__social-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5em;
+    transition: all 0.3s ease;
+}
+
+/* Animation 3 : Pulsation au survol des icônes sociales */
+.footer__social-links a:hover {
+    animation: pulse 0.6s ease-in-out;
+}
+
+/* Définition de l'animation pulse */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Respect des préférences utilisateur pour les animations réduites */
+@media (prefers-reduced-motion: reduce) {
+    .card, .navbar__button, .footer__social-links a, .navbar__burger span, .navbar__mobile-menu {
+        animation: none;
+        transition: none;
+    }
+}
+
+/* Media queries pour desktop */
+@media (min-width: 769px) {
+    .navbar {
+        padding: 20px;
+    }
+    
+    .navbar__logo img {
+        max-width: 150px;
+    }
+    
+    /* Burger reste visible sur desktop */
+    
+    .main-content__title {
+        font-size: 3em;
+    }
+    
+    .main-content__subtitle {
+        font-size: 1.5em;
+    }
+    
+    .card {
+        max-width: 50%;
+        padding: 30px;
+    }
+    
+    .card__cta-button {
+        font-size: 1.2em;
+    }
+}
