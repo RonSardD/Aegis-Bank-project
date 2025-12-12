@@ -1,6 +1,4 @@
-
+/* Définition des variables CSS */
 :root {
---firstcolor-- : #00AC4F;
---secondcolor-- : #fff;
---thirdcolor-- : #333;
+    --primary-color: #00AC4F; /* Couleur principale */
 }

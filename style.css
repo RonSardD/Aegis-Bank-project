@@ -1,9 +1,4 @@
-/* Définition des variables CSS pour une maintenance facile */
-:root {
-    --primary-color: #00AC4F; /* Couleur principale utilisée partout */
-}
-
-/* Reset basique pour uniformiser les styles par défaut des navigateurs */
+/* Reset basique pour uniformiser les styles */
 * {
     margin: 0;
     padding: 0;
@@ -12,19 +7,20 @@
 
 /* Styles généraux du corps de la page */
 body {
-    font-family: Arial, sans-serif; /* Police principale */
-    color: #333; /* Couleur du texte */
-    background-color: #fff; /* Fond blanc */
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #fff;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Hauteur minimale pour couvrir la fenêtre */
-    overflow-x: hidden; /* Évite le débordement horizontal */
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
-/* En-tête de navigation (utilisation de Flexbox) */
+
+/* En-tête de navigation */
 .navbar {
-    background-color: var(--primary-color); /* Utilise la variable CSS */
-    color: #fff; /* Texte blanc */
+    background-color: var(--primary-color);
+    color: #fff; 
     padding: 15px;
 }
 
@@ -32,41 +28,45 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative; /* Pour positionner le menu mobile */
+    position: relative;
 }
 
-/* Logo dans la navbar - Rendu uniforme sur desktop et mobile */
+/* Logo dans la navbar */
 .navbar__logo img {
-    max-width: 100px; /* Largeur max sur mobile */
-    height: auto; /* Garde les proportions */
-    object-fit: contain; /* Évite les distorsions */
+    max-width: 100px;
+    height: auto;
+    object-fit: contain;
 }
 
-/* Conteneur des boutons de connexion/inscription (visibles sur desktop) */
+.navbar__logo a {
+    text-decoration: none;
+}
+
+/* Conteneur des boutons de connexion et inscription */
 .navbar__buttons {
     display: flex;
-    gap: 10px; /* Espacement entre boutons */
-    margin-left: auto; /* Aligne à droite */
+    gap: 10px;
+    margin-left: auto;
 }
 
-/* Boutons individuels dans la navbar - Animation 1 : Transition douce au survol */
+/* Boutons individuels dans la navbar - Animation 1 */
 .navbar__button {
     background: none;
-    border: 1px solid #fff; /* Bordure blanche */
+    border: 1px solid #fff;
     color: #fff;
     padding: 8px 16px;
     border-radius: 5px;
     cursor: pointer;
-    transition: all 0.3s ease; /* Transition fluide pour toutes les propriétés */
+    transition: all 0.3s ease;
 }
 
 .navbar__button:hover {
-    background-color: #008c3f; /* Vert plus foncé au survol */
-    transform: scale(1.05); /* Légère augmentation de taille */
+    background-color: #008c3f;
+    transform: scale(1.05);
 }
 
 .navbar__button a {
-    color: inherit; /* Hérite la couleur du bouton */
+    color: inherit;
     text-decoration: none;
 }
 
@@ -75,7 +75,7 @@ body {
     display: none;
 }
 
-/* Bouton menu burger : toujours visible (3 lignes avec animations) */
+/* Bouton menu burger */
 .navbar__burger {
     display: flex;
     flex-direction: column;
@@ -83,35 +83,28 @@ body {
     width: 30px;
     height: 25px;
     cursor: pointer;
-    margin-left: 10px; /* Petit espacement */
+    margin-left: 10px;
 }
 
 .navbar__burger span {
     width: 100%;
     height: 3px;
     background-color: #fff;
-    transition: all 0.3s ease; /* Animation fluide pour la transformation en croix */
+    transition: all 0.3s ease;
 }
 
-/* Menu mobile : caché par défaut, affiché au clic avec animation slide-down */
-.navbar__mobile-menu {
-    display: none; /* Masqué par défaut */
-    position: absolute; /* Position absolue pour overlay */
-    top: 100%; /* Juste en dessous de la navbar */
-    left: 0;
-    right: 0;
-    background-color: var(--primary-color); /* Même fond que la navbar */
-    flex-direction: column; /* Boutons en colonne */
-    padding: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
-    max-height: 0; /* Caché au départ */
-    opacity: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease, opacity 0.3s ease; /* Animation slide-down fluide */
-    z-index: 1000; /* Au-dessus du contenu */
+/*bouton de connexion */
+.navbar__web-menu {
+    align-items: right; 
+    border: none;
+    display: flex;
+    flex-flow: column nowrap;
+    margin-left: auto;
+    text-decoration: none;
+    width: 8rem;
 }
 
-/* Quand le checkbox est coché : afficher le menu et animer le burger en croix */
+/* Quand le checkbox est coché */
 #menu-toggle:checked ~ .navbar__burger span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
 }
@@ -125,26 +118,26 @@ body {
 }
 
 #menu-toggle:checked ~ .navbar__mobile-menu {
-    display: flex; /* Affiché */
-    max-height: 200px; /* Hauteur suffisante pour les boutons */
+    display: flex;
+    max-height: 200px;
     opacity: 1;
 }
 
-/* Contenu principal : centré et flexible (utilisation de Flexbox) */
+/* Contenu principal qui est centré et flexible (flexbox) */
 .main-content {
-    flex: 1; /* Prend l'espace disponible */
+    flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centre verticalement */
-    align-items: center; /* Centre horizontalement */
+    justify-content: center;
+    align-items: center;
     padding: 20px;
-    background-color: #f0f0f0; /* Fond gris clair */
+    background-color: #f0f0f0;
 }
 
 /* Titre principal */
 .main-content__title {
     font-size: 1.8em;
-    color: var(--primary-color); /* Utilise la variable CSS */
+    color: var(--primary-color);
     text-align: center;
     margin-bottom: 10px;
 }
@@ -155,19 +148,19 @@ body {
     color: #333;
     margin-bottom: 20px;
     text-align: center;
-    max-width: 600px; /* Limite la largeur pour lisibilité */
+    max-width: 600px;
 }
 
-/* Carte d'offre - Animation 2 : Animation d'entrée (glissement depuis le bas) */
+/* Carte d'offre - Animation 2 */
 .card {
     background-color: #fff;
-    border: 1px solid var(--primary-color); /* Utilise la variable CSS */
+    border: 1px solid var(--primary-color);
     border-radius: 10px;
     padding: 20px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 80%;
-    animation: slideInUp 1s ease-out; /* Animation d'entrée */
+    animation: slideInUp 1s ease-out;
 }
 
 /* Définition de l'animation slideInUp */
@@ -183,7 +176,7 @@ body {
 }
 
 .card__title {
-    color: var(--primary-color); /* Utilise la variable CSS */
+    color: var(--primary-color);
     margin-bottom: 10px;
 }
 
@@ -192,7 +185,7 @@ body {
 }
 
 .card__cta-button {
-    background-color: var(--primary-color); /* Utilise la variable CSS */
+    background-color: var(--primary-color);
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -208,32 +201,32 @@ body {
 
 /* Pied de page */
 .footer {
-    background-color: var(--primary-color); /* Utilise la variable CSS */
+    background-color: var(--primary-color);
     color: #fff;
     padding: 10px;
     text-align: center;
     font-size: 0.9em;
 }
 
-/* Liens sociaux - Utilisation de Grid pour le bonus (3 colonnes égales) */
+/* Liens sociaux (Grid) */
 .footer__social-links {
     margin-bottom: 5px;
-    display: grid; /* Bonus : Utilisation de CSS Grid */
-    grid-template-columns: repeat(3, 1fr); /* 3 colonnes de largeur égale */
-    gap: 10px; /* Espacement entre icônes */
-    justify-items: center; /* Centre les icônes dans leurs cellules */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    justify-items: center;
 }
 
 .footer__social-links a {
     color: #fff;
     text-decoration: none;
-    font-size: 1.5em; /* Taille des icônes */
-    transition: all 0.3s ease; /* Préparation pour l'animation */
+    font-size: 1.5em;
+    transition: all 0.3s ease;
 }
 
 /* Animation 3 : Pulsation au survol des icônes sociales */
 .footer__social-links a:hover {
-    animation: pulse 0.6s ease-in-out; /* Animation de pulsation */
+    animation: pulse 0.6s ease-in-out;
 }
 
 /* Définition de l'animation pulse */
@@ -251,17 +244,17 @@ body {
     }
 }
 
-/* Media queries pour desktop (tablettes et plus) */
+/* Media queries pour desktop */
 @media (min-width: 769px) {
     .navbar {
         padding: 20px;
     }
     
     .navbar__logo img {
-        max-width: 150px; /* Logo légèrement plus grand sur desktop, proportions gardées */
+        max-width: 150px;
     }
     
-    /* Burger reste visible sur desktop (pas de display: none) */
+    /* Burger reste visible sur desktop */
     
     .main-content__title {
         font-size: 3em;
